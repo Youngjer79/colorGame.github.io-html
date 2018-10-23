@@ -7,17 +7,13 @@ var messageDisplay = document.querySelector("#message");
 var h1 = document.querySelector("h1");
 var resetButton = document.querySelector("#reset");
 var modeButtons =document.querySelectorAll(".mode");
-
-
 init();
-
 function init(){
 	//mode button event listener
 	setupModeButtons();
 	setupSquares();
 	reset();
 }
-
 function setupModeButtons(){
 	for(var i = 0; i< modeButtons.length; i++){
 		modeButtons[i].addEventListener("click", function(){
@@ -29,7 +25,6 @@ function setupModeButtons(){
 		});
 	}
 }
-
 function setupSquares(){
 	for(var i = 0; i <squares.length; i++){
 		//add click listners to squares
@@ -50,8 +45,6 @@ function setupSquares(){
 		});
 	}
 }
-
-
 function reset(){
 	colors = generateRandomColors(numSquares);
 	//pick a new random color from array
@@ -71,13 +64,10 @@ function reset(){
 	squares[i].style.backgroundColor = colors [i];
 	} 
 	h1.style.backgroundColor = "steelblue";
-
 }
-
 resetButton.addEventListener("click",function(){
 	reset();
 })
-
 function changeColors(color){
 	//loop through all squares(
 		for (var i=0; i < squares.length; i++){
@@ -103,7 +93,6 @@ function changeColors(color){
 	//return that array
 	return arr;
 }
-
 function randomColor(){
 	// pick a "red" from 0 -255
 	var r = Math.floor(Math.random()*256);
